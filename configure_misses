@@ -1,38 +1,43 @@
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: getisax
 Configure miss: getisax
-Configure miss: whether the compiler supports -Werror
-Configure miss: whether the compiler supports -errwarn
-Configure miss: whether the compiler supports -Wall
-Configure miss: whether the compiler supports -Wdeclaration-after-statement
-Configure miss: whether the compiler supports -Wno-unused-local-typedefs
-Configure miss: whether the compiler supports -fno-strict-aliasing
-Configure miss: whether the compiler supports -fvisibility=hidden
+Configure miss: getisax
+Configure miss: getisax
+Configure miss: getisax
 Configure miss: pthreads
-Configure miss: getisax
-Configure miss: whether the compiler supports -Werror
-Configure miss: whether the compiler supports -errwarn
+Configure miss: pthreads
+Configure miss: pthreads
+Configure miss: pthreads
 Configure miss: whether __amd64 is declared
 Configure miss: whether the compiler supports -Wall
-Configure miss: whether the compiler supports -Wdeclaration-after-statement
-Configure miss: whether the compiler supports -Wno-unused-local-typedefs
-Configure miss: whether the compiler supports -fno-strict-aliasing
-Configure miss: whether the compiler supports -fvisibility=hidden
-Configure miss: pthreads
-Configure miss: getisax
-Configure miss: whether the compiler supports -Werror
-Configure miss: whether the compiler supports -errwarn
+Configure miss: whether the compiler supports -Wall
+Configure miss: whether the compiler supports -Wall
 Configure miss: whether the compiler supports -Wall
 Configure miss: whether the compiler supports -Wdeclaration-after-statement
-Configure miss: whether the compiler supports -Wno-unused-local-typedefs
-Configure miss: whether the compiler supports -fno-strict-aliasing
-Configure miss: whether the compiler supports -fvisibility=hidden
-Configure miss: pthreads
-Configure miss: getisax
-Configure miss: whether the compiler supports -Werror
-Configure miss: whether the compiler supports -errwarn
-Configure miss: whether the compiler supports -Wall
 Configure miss: whether the compiler supports -Wdeclaration-after-statement
+Configure miss: whether the compiler supports -Wdeclaration-after-statement
+Configure miss: whether the compiler supports -Wdeclaration-after-statement
+Configure miss: whether the compiler supports -Werror
+Configure miss: whether the compiler supports -Werror
+Configure miss: whether the compiler supports -Werror
+Configure miss: whether the compiler supports -Werror
 Configure miss: whether the compiler supports -Wno-unused-local-typedefs
+Configure miss: whether the compiler supports -Wno-unused-local-typedefs
+Configure miss: whether the compiler supports -Wno-unused-local-typedefs
+Configure miss: whether the compiler supports -Wno-unused-local-typedefs
+Configure miss: whether the compiler supports -errwarn
+Configure miss: whether the compiler supports -errwarn
+Configure miss: whether the compiler supports -errwarn
+Configure miss: whether the compiler supports -errwarn
+Configure miss: whether the compiler supports -fno-strict-aliasing
+Configure miss: whether the compiler supports -fno-strict-aliasing
+Configure miss: whether the compiler supports -fno-strict-aliasing
 Configure miss: whether the compiler supports -fno-strict-aliasing
 Configure miss: whether the compiler supports -fvisibility=hidden
-Configure miss: pthreads
+Configure miss: whether the compiler supports -fvisibility=hidden
+Configure miss: whether the compiler supports -fvisibility=hidden
+Configure miss: whether the compiler supports -fvisibility=hidden
