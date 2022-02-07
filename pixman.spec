@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : pixman
-Version  : 0.38.4
-Release  : 43
-URL      : http://cairographics.org/releases/pixman-0.38.4.tar.gz
-Source0  : http://cairographics.org/releases/pixman-0.38.4.tar.gz
+Version  : 0.40.0
+Release  : 44
+URL      : https://cairographics.org/releases/pixman-0.40.0.tar.gz
+Source0  : https://cairographics.org/releases/pixman-0.40.0.tar.gz
 Summary  : The pixman library (version 1)
 Group    : Development/Tools
 License  : MIT
@@ -116,19 +116,19 @@ staticdev32 components for the pixman package.
 
 
 %prep
-%setup -q -n pixman-0.38.4
-cd %{_builddir}/pixman-0.38.4
+%setup -q -n pixman-0.40.0
+cd %{_builddir}/pixman-0.40.0
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
 pushd ..
-cp -a pixman-0.38.4 build32
+cp -a pixman-0.40.0 build32
 popd
 pushd ..
-cp -a pixman-0.38.4 buildavx2
+cp -a pixman-0.40.0 buildavx2
 popd
 pushd ..
-cp -a pixman-0.38.4 buildavx512
+cp -a pixman-0.40.0 buildavx512
 popd
 
 %build
@@ -136,7 +136,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1633820531
+export SOURCE_DATE_EPOCH=1644259418
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
 export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
@@ -182,9 +182,9 @@ make  %{?_smp_mflags}
 popd
 unset PKG_CONFIG_PATH
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3"
-export FFLAGS="$FFLAGS -m64 -march=x86-64-v3"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 %reconfigure  --disable-gtk \
@@ -196,9 +196,9 @@ make  %{?_smp_mflags}
 popd
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
-export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
 %reconfigure  --disable-gtk \
@@ -223,10 +223,10 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1633820531
+export SOURCE_DATE_EPOCH=1644259418
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pixman
-cp %{_builddir}/pixman-0.38.4/COPYING %{buildroot}/usr/share/package-licenses/pixman/3b90aaf730fa20460f8fe3fd20c16daf3acaba59
+cp %{_builddir}/pixman-0.40.0/COPYING %{buildroot}/usr/share/package-licenses/pixman/3b90aaf730fa20460f8fe3fd20c16daf3acaba59
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
@@ -244,13 +244,13 @@ fi
 popd
 pushd ../buildavx2/
 %make_install_v3
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 pushd ../buildavx512/
 %make_install_v4
-/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -275,13 +275,13 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libpixman-1.so.0
-/usr/lib64/libpixman-1.so.0.38.4
+/usr/lib64/libpixman-1.so.0.40.0
 /usr/share/clear/optimized-elf/lib*
 
 %files lib32
 %defattr(-,root,root,-)
 /usr/lib32/libpixman-1.so.0
-/usr/lib32/libpixman-1.so.0.38.4
+/usr/lib32/libpixman-1.so.0.40.0
 
 %files license
 %defattr(0644,root,root,0755)

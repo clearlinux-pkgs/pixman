@@ -110,6 +110,8 @@ libpixman-1.so.0:pixman_image_set_clip_region
 libpixman-1.so.0:pixman_image_set_clip_region32
 libpixman-1.so.0:pixman_image_set_component_alpha
 libpixman-1.so.0:pixman_image_set_destroy_function
+libpixman-1.so.0:pixman_image_set_dither
+libpixman-1.so.0:pixman_image_set_dither_offset
 libpixman-1.so.0:pixman_image_set_filter
 libpixman-1.so.0:pixman_image_set_has_client_clip
 libpixman-1.so.0:pixman_image_set_indexed
