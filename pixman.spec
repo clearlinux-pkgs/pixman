@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : pixman
 Version  : 0.40.0
-Release  : 48
+Release  : 49
 URL      : https://cairographics.org/releases/pixman-0.40.0.tar.gz
 Source0  : https://cairographics.org/releases/pixman-0.40.0.tar.gz
 Summary  : The pixman library (version 1)
@@ -126,7 +126,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656428139
+export SOURCE_DATE_EPOCH=1661265494
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
@@ -213,10 +213,10 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1656428139
+export SOURCE_DATE_EPOCH=1661265494
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pixman
-cp %{_builddir}/pixman-0.40.0/COPYING %{buildroot}/usr/share/package-licenses/pixman/3b90aaf730fa20460f8fe3fd20c16daf3acaba59
+cp %{_builddir}/pixman-%{version}/COPYING %{buildroot}/usr/share/package-licenses/pixman/3b90aaf730fa20460f8fe3fd20c16daf3acaba59
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
@@ -280,6 +280,8 @@ popd
 
 %files staticdev
 %defattr(-,root,root,-)
+/usr/lib64/glibc-hwcaps/x86-64-v3/libpixman-1.a
+/usr/lib64/glibc-hwcaps/x86-64-v4/libpixman-1.a
 /usr/lib64/libpixman-1.a
 
 %files staticdev32
