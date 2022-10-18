@@ -42,6 +42,11 @@ Configure miss: whether the compiler supports -fvisibility=hidden
 Configure miss: whether the compiler supports -fvisibility=hidden
 Configure miss: whether the compiler supports -fvisibility=hidden
 Configure miss: whether the compiler supports -fvisibility=hidden
+Configure miss: whether to use ARM A64 NEON assembler
+Configure miss: whether to use ARM A64 NEON assembler
+Configure miss: whether to use ARM A64 NEON assembler
+Configure miss: whether to use ARM A64 NEON assembler
+Configure miss: whether to use ARM A64 NEON assembler
 Configure miss: x86_64-generic-linux-gnu-file
 Configure miss: x86_64-generic-linux-gnu-file
 Configure miss: x86_64-generic-linux-gnu-file
