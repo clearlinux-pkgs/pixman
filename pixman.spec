@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : pixman
 Version  : 0.42.2
-Release  : 53
+Release  : 54
 URL      : https://cairographics.org/releases/pixman-0.42.2.tar.gz
 Source0  : https://cairographics.org/releases/pixman-0.42.2.tar.gz
 Summary  : The pixman library (version 1)
