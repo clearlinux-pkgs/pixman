@@ -6,7 +6,7 @@
 %define keepstatic 1
 Name     : pixman
 Version  : 0.42.2
-Release  : 55
+Release  : 56
 URL      : https://cairographics.org/releases/pixman-0.42.2.tar.gz
 Source0  : https://cairographics.org/releases/pixman-0.42.2.tar.gz
 Summary  : The pixman library (version 1)
@@ -126,7 +126,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683228487
+export SOURCE_DATE_EPOCH=1685570759
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -213,7 +213,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1683228487
+export SOURCE_DATE_EPOCH=1685570759
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pixman
 cp %{_builddir}/pixman-%{version}/COPYING %{buildroot}/usr/share/package-licenses/pixman/3b90aaf730fa20460f8fe3fd20c16daf3acaba59 || :
@@ -247,8 +247,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libpixman-1.so
-/V4/usr/lib64/libpixman-1.so
 /usr/include/pixman-1/pixman-version.h
 /usr/include/pixman-1/pixman.h
 /usr/lib64/libpixman-1.so
@@ -262,9 +260,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libpixman-1.so.0
 /V3/usr/lib64/libpixman-1.so.0.42.2
-/V4/usr/lib64/libpixman-1.so.0
 /V4/usr/lib64/libpixman-1.so.0.42.2
 /usr/lib64/libpixman-1.so.0
 /usr/lib64/libpixman-1.so.0.42.2
