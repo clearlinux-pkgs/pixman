@@ -1,5 +1,4 @@
- --disable-gtk
---disable-mmx
---disable-sse2
---disable-ssse3
---enable-static
+-Dmmx=disabled
+-Dsse2=enabled
+-Dssse3=enabled
+-Dgtk=disabled

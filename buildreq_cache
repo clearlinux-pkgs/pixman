@@ -1,2 +1,5 @@
-0.42.2
-pkg-config
+0.43.0
+glib-dev
+pkgconfig(32glib-2.0)
+pkgconfig(glib-2.0)
+pkgconfig(gtk+-3.0)
