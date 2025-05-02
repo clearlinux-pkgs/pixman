@@ -1,4 +1,4 @@
-0.44.0
+0.46.0
 glib-dev
 pkgconfig(32glib-2.0)
 pkgconfig(glib-2.0)
